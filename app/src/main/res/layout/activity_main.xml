@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hopetree.oremus.MainActivity"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:titleTextColor="@color/toolbar"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <TextClock
+
+        android:id="@+id/textClock2"
+        android:layout_width="370dp"
+        android:layout_height="149dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/time"
+        android:gravity="fill"
+        android:textColor="#ffff"
+        android:textSize="75sp"
+        app:layout_anchor="@+id/maintime" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/time"
+        android:text="TextView"
+        android:textColor="#ffff"
+        android:textSize="45sp" />
+
+    <include
+        android:id="@+id/maintime"
+        layout="@layout/content_main"
+        android:layout_width="match_parent"
+        android:layout_height="537dp"
+        android:visibility="visible" />
+
+
+</LinearLayout>
