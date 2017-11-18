@@ -14,6 +14,8 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.text.DateFormat;
@@ -23,6 +25,7 @@ import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
+    String[] prayerList = {"Angelus","Divine Mercy","Rosary","Daily Readings"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +34,18 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-
         TextView tv = (TextView) findViewById(R.id.textView2);
         String ct = DateFormat.getDateInstance().format(new Date());
         tv.setText(ct);
+
+        ArrayAdapter adapter = new ArrayAdapter <String>(this,R.layout.activity_listview, prayerList);
+
+        ListView listView = (ListView) findViewById(R.id.prayer_list);
+        listView.setAdapter(adapter);
+
+        
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -44,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
 
 
     @Override
@@ -60,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 
 
 }
