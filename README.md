@@ -1,1 +1,2 @@
-# Oremus
+Oremus is an android app that has examples relating to notifications(sends notification at a particular time everyday).
+Also has listviews,scrolling activities and other basic things useful to android beginners looking to build a career on android!
